@@ -9,14 +9,14 @@ public class Notenschnittrechner {
         double schnitt = 0;
 
         System.out.println("Wie viele Noten möchtest du eingeben?");
-        j = scanner.nextInt();
-        int[] noten = new int[j];
-        for(int i = 0; i < noten.length; i++) {
-            System.out.println("Bitte gib eine Note ein:");
-            value = scanner.nextInt();
-            switch (value) {
-                case 1:
-                    noten[i] += 1;
+        j = scanner.nextInt();                              //hier bekommt die variable j ihren wert nachdem gefragt wurde wie viele noten
+        int[] noten = new int[j];                           //zusammengerechnet werden sollen das int array bekommt dadurch seine länge
+        for(int i = 0; i < noten.length; i++) {             //die forschleife in der mann seine noten eingibt läuft dann so oft durch wie
+            System.out.println("Bitte gib eine Note ein:"); //das int array lang ist daher kann man nur die zahl noten eingeben die vorher
+            value = scanner.nextInt();                      //festgelegt wurde für value wird hier durch den scanner ein wert eingegeben
+            switch (value) {                                //dabei soll es sich um eine der noten handeln
+                case 1:                                     //switch case überprüft nun den notenwert und schreibt den betrag ins array
+                    noten[i] += 1;                          //dies geschieht an stelle i welche dem durchlauf der forschleife entspricht
                     break;
                 case 2:
                     noten[i] += 2;
@@ -35,10 +35,10 @@ public class Notenschnittrechner {
                     break;
                 default:
                     System.out.println("Ungültige Eingabe! Nur Noten von 1-6 möglich.");
-            }
-            schnitt = schnitt + noten[i];
+            }                                              //bei falscher eingabe erscheint diese nachricht
+            schnitt = schnitt + noten[i];                  //am ende des durchlaufs wird dem schnitt der notenwert zugerechnet
         }
-        schnitt = schnitt / noten.length;
-        System.out.println("Der Notendurchschnitt ist: " + schnitt);
+        schnitt = schnitt / noten.length;                  //sind alle noten eingegeben wird schnitt welcher hier die summe aller noten ist
+        System.out.println("Der Notendurchschnitt ist: " + schnitt); //durch die anzahl der noten geteilt um so den schnitt zu erhalten
     }
 }
